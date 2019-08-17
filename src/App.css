@@ -1,0 +1,42 @@
+.App {
+  text-align: center;
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+}
+
+.main-container{
+  background-color: rgba(22, 32, 37, 0.904);
+  width:90%;
+  min-height: 300px;
+  display: inline-block;
+}
+
+.column {
+  float: left;
+  width: 25%;
+  border: #fff 1px solid;
+  margin:2%;
+  padding:2%;
+  /* animation-name: spin;
+  animation-duration: 5000ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;  */
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+  text-align: center;
+}
+
+
+@keyframes spin {
+  from {
+      transform:rotate(0deg);
+  }
+  to {
+      transform:rotate(360deg);
+  }
+}
