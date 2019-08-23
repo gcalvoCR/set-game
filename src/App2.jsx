@@ -16,6 +16,7 @@ function App2(){
     <div>
       <div className="page">
         <div className="sidebar">
+          <h1>Instructions</h1>
           <p>In here I will place the instructions of the game</p>
         </div>
         <div className = "main">
