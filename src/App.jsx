@@ -26,6 +26,9 @@ function App2(){
           <div className="card-section">
             {createTable()}
           </div>
+          <div className="buttons-section">
+          <button type="button" className="btn">Start over!</button>
+          </div>
         </div>
       </div>
       <div className="footer">

@@ -4,10 +4,7 @@ import './App.css';
 function Card(){
 
   const changeFigure = () => {
-    console.log("Here I am")
-    return  <div className="column" >
-              <i className="fa fa-ambulance"></i>
-            </div>;
+    alert("Hi!");
   }
 
   return (
