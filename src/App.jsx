@@ -1,39 +1,18 @@
 import React, { Component } from 'react';
 import './App.css';
-import Card from './Card';
+import Sidebar from './components/Sidebar';
+import Main from './components/Main';
+import Footer from './components/Footer';
 
 function App2(){
-
-  const createTable = () => {
-    let table = []
-    for (let i = 0; i < 16; i++) {
-      table.push(<Card/>)
-    }
-    return table
-  }
 
   return (
     <div>
       <div className="page">
-        <div className="sidebar">
-          <h1>Instructions</h1>
-          <p>In here I will place the instructions of the game</p>
-        </div>
-        <div className = "main">
-          <h1 >Set Game</h1>
-          <p>Let's play!</p>
-          <div className="header-line"></div>
-          <div className="card-section">
-            {createTable()}
-          </div>
-          <div className="buttons-section">
-          <button type="button" className="btn">Start over!</button>
-          </div>
-        </div>
+        <Sidebar/>
+        <Main/>
       </div>
-      <div className="footer">
-            <p>by Gabriel Calvo V.</p>
-          </div>
+      <Footer/>
     </div>
   );
 }
