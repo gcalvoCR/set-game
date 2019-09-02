@@ -20,6 +20,7 @@ class Card extends Component{
   render(){
     return(
       <div className={`card-${this.state.color}`} onClick={this.changeState}>
+        <p>{this.props.card}</p>
       </div>
     )
   }

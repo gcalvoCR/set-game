@@ -48,10 +48,12 @@
 }
 
 .card-gray{
+  text-align: center;
   background-color: rgb(65, 65, 65);
   display: inline-block;
   width: 13%;
   height: 35px;
+  line-height: 4px;
   background-color: #e7e7e7; color: black;;
   margin:2%;
   padding:2%;
@@ -59,10 +61,12 @@
 }
 
 .card-red{
+  text-align: center;
   background: rgb(211, 77, 63);
   display: inline-block;
   width: 13%;
   height: 35px;
+  line-height: 4px;
   margin:2%;
   padding:2%;
   border-radius: 1vh 1vh;
