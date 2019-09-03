@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './App.css';
 import Sidebar from './components/Sidebar';
 import Main from './components/Main';
 import Footer from './components/Footer';
 
-function App2(){
+function App(){
 
   return (
     <div>
@@ -17,4 +17,4 @@ function App2(){
   );
 }
 
-export default App2;
+export default App;

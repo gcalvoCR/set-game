@@ -7,7 +7,7 @@ class Card extends Component{
   }
 
   changeState = () => {
-    if(this.state.color=='gray'){
+    if(this.state.color==='gray'){
       this.setState(color => ({
         color: 'red' }));
     } else {
@@ -20,7 +20,7 @@ class Card extends Component{
   render(){
     return(
       <div className={`card-${this.state.color}`} onClick={this.changeState}>
-        <p>{this.props.card}</p>
+        <p>{this.props.card.number}</p>
       </div>
     )
   }
