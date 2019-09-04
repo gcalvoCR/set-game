@@ -47,7 +47,7 @@
   margin-bottom: 3vh;
 }
 
-.card-gray{
+.card-selected-false{
   text-align: center;
   background-color: rgb(65, 65, 65);
   display: inline-block;
@@ -60,7 +60,7 @@
   border-radius: 1vh 1vh;
 }
 
-.card-red{
+.card-selected-true{
   text-align: center;
   background: rgb(211, 77, 63);
   display: inline-block;

@@ -1,26 +1,13 @@
 import React, { Component } from 'react';
 
 class Card extends Component{
-
-  state = {
-    color: 'gray'
-  }
-
-  changeState = () => {
-    if(this.state.color==='gray'){
-      this.setState(color => ({
-        color: 'red' }));
-    } else {
-      this.setState(color => ({
-        color: 'gray' }));
-    }
-    
-  }
-
   render(){
+    //distructuring to avoid typing this.props.card.value ..... everywhere
+    const { id, selected  } = this.props.card;
+
     return(
-      <div className={`card-${this.state.color}`} onClick={this.changeState}>
-        <p>{this.props.card.number}</p>
+      <div className={`card-selected-${selected}`} onClick={this.props.handleCard.bind(this, id)}>
+        <p>{ id }</p>
       </div>
     )
   }

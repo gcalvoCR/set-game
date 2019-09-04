@@ -5,7 +5,7 @@ class Cards extends Component{
   render(){
     console.log(this.props.cards)
     return this.props.cards.map((card, index)=>(
-      <Card key={index} card={card}/>
+      <Card key={index} card={card} handleCard={this.props.handleCard}/>
     ));
   }
 }
