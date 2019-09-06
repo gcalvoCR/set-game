@@ -8,7 +8,7 @@ class Card extends Component{
 
   render(){
     //distructuring to avoid typing this.props.card.value ..... everywhere
-    const { id, number,selected, played, figure  } = this.props.card;
+    const { id, number,color, selected, displayed, figure  } = this.props.card;
 
     const items = []
 
@@ -17,7 +17,7 @@ class Card extends Component{
     }
     
     return(
-      <div className={`card-selected-${selected} played-${played}`} onClick={this.props.handleCard.bind(this, id)}>
+      <div className={`card-selected-${selected} display-${displayed} ${color}`} onClick={this.props.handleCard.bind(this, id)}>
         {items}
       </div>
     )

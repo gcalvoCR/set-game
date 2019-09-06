@@ -6,25 +6,23 @@ class Main extends Component{
 
   state = {
     cards:[
-      {id: 1, number: 1, figure: "fa fa-square fa-3x", valid:true, played: true, selected: false},
-      {id: 2, number: 2, figure: 'fa fa-square-o fa-3x', valid:true, played: true, selected: false},
-      {id: 3, number: 3, figure: 'fa fa-minus-square-o fa-3x', valid:true, played: true, selected: false},
-      {id: 4, number: 1, figure: 'fa fa-dot-circle-o fa-3x', valid:true, played: true, selected: false},
-      {id: 5, number: 2, figure: 'fa fa-circle-o fa-3x', valid:true, played: true, selected: false},
-      {id: 6, number: 3, figure: 'fa fa-circle fa-3x', valid:true, played: true, selected: false},
-      {id: 7, number: 1, figure: 'fa fa-minus-square-o fa-3x', valid:true, played: true, selected: false},
-      {id: 8, number: 2, figure: 'fa fa-minus-square-o fa-3x', valid:true, played: true, selected: false},
-      {id: 9, number: 3, figure: 'fa fa-minus-square-o fa-3x', valid:true, played: true, selected: false},
-      {id: 10, number: 1, figure: 'fa fa-heart fa-3x', valid:true, played: true, selected: false},
-      {id: 11, number: 2, figure: 'fa fa-heart-o fa-3x', valid:true, played: true, selected: false},
-      {id: 12, number: 3, figure: 'fa fa-heartbeat fa-3x', valid:true, played: true, selected: false},
-      {id: 13, number: 1, figure: 'fa fa-minus-square-o fa-3x', valid:true, played: true, selected: false},
-      {id: 14, number: 2, figure: 'fa fa-minus-square-o fa-3x', valid:true, played: true, selected: false},
-      {id: 15, number: 3, figure: 'fa fa-minus-square-o fa-3x', valid:true, played: true, selected: false},
-      {id: 16, number: 1, figure: 'fa fa-minus-square-o fa-3x', valid:true, played: true, selected: false}
-      // {id: 17, number: 1, valid:true, played: true, selected: false}
-      // {id: 18, number: 2, valid:true, played: true, selected: false},
-      // {id: 19, number: 2, valid:true, played: true, selected: false},
+      {id: 1, number: 1, color: 'green', figure: "fa fa-square fa-2x", valid:true, displayed: true, selected: false},
+      {id: 2, number: 2, color: 'red', figure: 'fa fa-square-o fa-2x', valid:true, displayed: true, selected: false},
+      {id: 3, number: 3, color: 'blue', figure: 'fa fa-minus-square-o fa-2x', valid:true, displayed: true, selected: false},
+      {id: 4, number: 1, color: 'green', figure: 'fa fa-dot-circle-o fa-2x', valid:true, displayed: true, selected: false},
+      {id: 5, number: 2, color: 'green', figure: 'fa fa-circle-o fa-2x', valid:true, displayed: true, selected: false},
+      {id: 6, number: 3, color: 'green', figure: 'fa fa-circle fa-2x', valid:true, displayed: true, selected: false},
+      {id: 7, number: 1, color: 'blue', figure: 'fa fa-minus-square-o fa-2x', valid:true, displayed: true, selected: false},
+      {id: 8, number: 2, color: 'green', figure: 'fa fa-minus-square-o fa-2x', valid:true, displayed: true, selected: false},
+      {id: 9, number: 3, color: 'green', figure: 'fa fa-minus-square-o fa-2x', valid:true, displayed: true, selected: false},
+      {id: 10, number: 1, color: 'blue', figure: 'fa fa-heart fa-2x', valid:true, displayed: true, selected: false},
+      {id: 11, number: 2, color: 'green', figure: 'fa fa-heart-o fa-2x', valid:true, displayed: true, selected: false},
+      {id: 12, number: 3, color: 'green', figure: 'fa fa-heartbeat fa-2x', valid:true, displayed: true, selected: false},
+      {id: 13, number: 1, color: 'red', figure: 'fa fa-minus-square-o fa-2x', valid:true, displayed: true, selected: false},
+      {id: 14, number: 2, color: 'green', figure: 'fa fa-minus-square-o fa-2x', valid:true, displayed: true, selected: false},
+      {id: 15, number: 3, color: 'blue', figure: 'fa fa-minus-square-o fa-2x', valid:true, displayed: true, selected: false},
+      {id: 16, number: 1, color: 'red', figure: 'fa fa-circle fa-2x', valid:true, played: true, selected: false}
+      // {id: 17, number: 1, valid:true, played: true, selected: false}displayed
       // {id: 20, number: 3, valid:true, played: true, selected: false},
       // {id: 21, number: 4, valid:true, played: true, selected: false},
       // {id: 22, number: 5, valid:true, played: true, selected: false},
@@ -62,6 +60,23 @@ class Main extends Component{
     }
     return list;
 }
+
+shuffleCards2 = () =>{
+  let list = [];
+  while (list.length<16){
+    let upper = this.state.cards.length;  
+    let i = Math.floor( Math.random() * upper ) + 1;
+    let id= this.state.cards[i-1].id; 
+    this.setState({ cards: this.state.cards.map(card => {
+      if(card.id=== id){
+        card.displayed= !card.displayed;
+      }
+      return card;
+    })
+  });
+  }
+}
+
   
   //Handle selected card
   handleCard = (id) => {
@@ -82,15 +97,14 @@ class Main extends Component{
   
 
   render(){
-    console.log(this.state.cards)
-    const shuffleCards = this.shuffleCards(this.state.cards);
+   // this.shuffleCards2();
     return (
       <div className = "main">
           <h1 >Set Game</h1>
           <p>Let's play!</p>
           <div className="header-line"></div>
           <div className="card-section">
-            <Cards cards={shuffleCards} handleCard={this.handleCard} />
+            <Cards cards={this.state.cards} handleCard={this.handleCard} />
           </div>
           <Button />
       </div> 
