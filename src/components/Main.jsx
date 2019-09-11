@@ -21,22 +21,23 @@ class Main extends Component{
       {id: 13, number: 1, color: 'red', figure: 'fa fa-minus-square-o fa-2x', valid:true, displayed: true, selected: false},
       {id: 14, number: 2, color: 'green', figure: 'fa fa-minus-square-o fa-2x', valid:true, displayed: true, selected: false},
       {id: 15, number: 3, color: 'blue', figure: 'fa fa-minus-square-o fa-2x', valid:true, displayed: true, selected: false},
-      {id: 16, number: 1, color: 'red', figure: 'fa fa-circle fa-2x', valid:true, played: true, selected: false}
-      // {id: 17, number: 1, valid:true, played: true, selected: false}displayed
-      // {id: 20, number: 3, valid:true, played: true, selected: false},
-      // {id: 21, number: 4, valid:true, played: true, selected: false},
-      // {id: 22, number: 5, valid:true, played: true, selected: false},
-      // {id: 23, number: 6, valid:true, played: true, selected: false},
-      // {id: 24, number: 7, valid:true, played: true, selected: false},
-      // {id: 25, number: 8, valid:true, played: true, selected: false},
-      // {id: 26, number: 9, valid:true, played: true, selected: false},
-      // {id: 27, number: 10, valid:true, played: true, selected: false},
-      // {id: 28, number: 11, valid:true, played: true, selected: false},
-      // {id: 29, number: 12, valid:true, played: true, selected: false},
-      // {id: 30, number: 13, valid:true, played: true, selected: false},
-      // {id: 31, number: 14, valid:true, played: true, selected: false},
-      // {id: 32, number: 15, valid:true, played: true, selected: false},
-      // {id: 33, number: 16, valid:true, played: true, selected: false}
+      {id: 16, number: 1, color: 'red', figure: 'fa fa-circle fa-2x', valid:true, played: true, displayed: true, selected: false},
+      {id: 17, number: 1, color: 'green', figure: "fa fa-square fa-2x", valid:true, displayed: false, selected: false},
+      {id: 18, number: 2, color: 'red', figure: 'fa fa-square-o fa-2x', valid:true, displayed: false, selected: false},
+      {id: 19, number: 3, color: 'blue', figure: 'fa fa-minus-square-o fa-2x', valid:true, displayed: false, selected: false},
+      {id: 20, number: 1, color: 'green', figure: 'fa fa-dot-circle-o fa-2x', valid:true, displayed: false, selected: false},
+      {id: 21, number: 2, color: 'green', figure: 'fa fa-circle-o fa-2x', valid:true, displayed: false, selected: false},
+      {id: 22, number: 3, color: 'green', figure: 'fa fa-circle fa-2x', valid:true, displayed: false, selected: false},
+      {id: 23, number: 1, color: 'blue', figure: 'fa fa-minus-square-o fa-2x', valid:true, displayed: false, selected: false},
+      {id: 24, number: 2, color: 'green', figure: 'fa fa-minus-square-o fa-2x', valid:true, displayed: false, selected: false},
+      {id: 25, number: 3, color: 'green', figure: 'fa fa-minus-square-o fa-2x', valid:true, displayed: false, selected: false},
+      {id: 26, number: 1, color: 'blue', figure: 'fa fa-heart fa-2x', valid:true, displayed: false, selected: false},
+      {id: 27, number: 2, color: 'green', figure: 'fa fa-heart-o fa-2x', valid:true, displayed: false, selected: false},
+      {id: 28, number: 3, color: 'green', figure: 'fa fa-heartbeat fa-2x', valid:true, displayed: false, selected: false},
+      {id: 29, number: 1, color: 'red', figure: 'fa fa-minus-square-o fa-2x', valid:true, displayed: false, selected: false},
+      {id: 30, number: 2, color: 'green', figure: 'fa fa-minus-square-o fa-2x', valid:true, displayed: false, selected: false},
+      {id: 31, number: 3, color: 'blue', figure: 'fa fa-minus-square-o fa-2x', valid:true, displayed: false, selected: false},
+      {id: 32, number: 1, color: 'red', figure: 'fa fa-circle fa-2x', valid:true, played: true, displayed: false, selected: false}
     ]
   }
 
@@ -97,6 +98,7 @@ shuffleCards2 = () =>{
   
 
   render(){
+    console.log("Cartas"+ this.props.cards)
    // this.shuffleCards2();
     return (
       <div className = "main">
@@ -106,7 +108,9 @@ shuffleCards2 = () =>{
           <div className="card-section">
             <Cards cards={this.state.cards} handleCard={this.handleCard} />
           </div>
-          <Button />
+          <div className="command-section">
+            <Button />
+          </div>
       </div> 
     )
   }

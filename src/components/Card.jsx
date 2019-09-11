@@ -13,11 +13,11 @@ class Card extends Component{
     const items = []
 
     for (let i=0; i < number ; i++) {
-    items.push(<i className={figure}></i>)
+    items.push(<i className={figure} key={`icon-${id}-${i}`}></i>)
     }
     
     return(
-      <div className={`card-selected-${selected} display-${displayed} ${color}`} onClick={this.props.handleCard.bind(this, id)}>
+      <div className={`card-selected-${selected} display-${displayed} ${color} c${number}`} onClick={this.props.handleCard.bind(this, id)}>
         {items}
       </div>
     )
