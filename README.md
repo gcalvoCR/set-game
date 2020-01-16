@@ -1,6 +1,6 @@
 This app was developed using as a React practice.
 
-If you want what i have accomplished so far, please click the following [https://setgamebygcalvocr.netlify.com/](link).
+If you want what i have accomplished so far, please click the following [link](https://setgamebygcalvocr.netlify.com/).
 
 In order for you to run this app locally, make sure you have React installed. 
 
